@@ -12,7 +12,6 @@ module "aws-management" {
 
   account_tags = {
     "Function" = "ControlTowerManagementAccount"
-
   }
 
   change_management_parameters = {
