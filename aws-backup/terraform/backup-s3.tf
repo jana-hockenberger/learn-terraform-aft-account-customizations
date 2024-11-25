@@ -16,6 +16,8 @@ resource "aws_s3_bucket_versioning" "versioning" {
 resource "aws_s3_bucket_object_lock_configuration" "object_lock" {
   bucket = aws_s3_bucket.immutable_bucket.id
 
+  depends_on = [aws_s3_bucket_versioning.versioning]
+
   rule {
     default_retention {
       mode = "GOVERNANCE"
