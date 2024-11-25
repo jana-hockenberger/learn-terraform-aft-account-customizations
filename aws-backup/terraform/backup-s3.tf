@@ -13,8 +13,8 @@ resource "aws_s3_bucket_versioning" "versioning" {
   }
 }
 
-resource "aws_s3_bucket_object_lock_configuration" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_object_lock_configuration" "object_lock" {
+  bucket = aws_s3_bucket.immutable_bucket.id
 
   rule {
     default_retention {
