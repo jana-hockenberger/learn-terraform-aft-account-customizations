@@ -1,9 +1,8 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_s3_bucket" "immutable_bucket" {
-  bucket = "backup-${data.aws_caller_identity.current.account_id}"
+  bucket = "veeam-backup-capacity-pool-${data.aws_caller_identity.current.account_id}"
   tags = {
-    Name        = "Veeam Backup Capacity Pool"
     Description = "S3 bucket for storing Veeam backup data"
   }
 }
